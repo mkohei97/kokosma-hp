@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>私たちの想い｜ここスマ(大阪・羽曳野のスマホの相談窓口)</title>
+<meta name="description" content="「家族に、友人にお勧めできる」体験を、当たり前にする。ここスマがこの店をつくる理由と、目指す未来。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F2; --ink:#1E3A30; --green:#1E4D3E; --green-ink:#F3F1E8; --green-sub:#D5E0D6; --green-label:#A8C4B3;
+  --label:#8C6A3F; --faint:#A79F8B; --sub:#6E6A5B; --body-sub:#3E4B41; --line:#E3DFD2; --photo:#F0EDE2; --marker:#E8DFC2;
+  --serif:'Shippori Mincho',serif; --sans:'Noto Sans JP',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.pad{padding-left:clamp(24px,5vw,60px);padding-right:clamp(24px,5vw,60px)}
+.label{font-size:12px;letter-spacing:.6em;color:var(--label)}
+.label-sub{font-size:12px;letter-spacing:.3em;color:var(--faint)}
+.serif{font-family:var(--serif)}
+.btn{display:inline-block;text-decoration:none;background:var(--green);color:var(--bg);font-weight:700;font-size:17px;letter-spacing:.14em;padding:20px 46px}
+.btn-line{display:inline-block;text-decoration:none;border:1px solid var(--green);color:var(--green);font-weight:700;font-size:15px;letter-spacing:.12em;padding:16px 36px}
+.marker{background:linear-gradient(transparent 66%,var(--marker) 66%)}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:clamp(20px,3vw,30px);padding-bottom:clamp(20px,3vw,30px)}
+header.site .logo{font-family:var(--serif);font-weight:800;font-size:23px;letter-spacing:.2em}
+header.site nav{display:flex;gap:34px;align-items:center;font-size:14.5px;letter-spacing:.12em;flex-wrap:wrap}
+header.site nav a{text-decoration:none}
+header.site nav a.tel{font-family:var(--serif);font-size:17px;letter-spacing:.1em;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.hero{padding-top:clamp(70px,11vw,140px);position:relative}
+.hero-sub{margin:clamp(26px,4vw,40px) 0 0;font-family:var(--serif);font-size:clamp(17px,2.2vw,24px);letter-spacing:.08em;color:var(--body-sub)}
+.hero-info{margin:14px 0 0;font-size:13.5px;letter-spacing:.14em;color:var(--faint)}
+.hero h1{margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(37px,8vw,94px);line-height:1.52;letter-spacing:.01em;color:var(--green);text-wrap:pretty}
+.hero .date{white-space:nowrap;position:absolute;right:clamp(24px,5vw,60px);top:140px;writing-mode:vertical-rl;font-family:var(--serif);font-size:15px;letter-spacing:.6em;color:var(--faint)}
+.scrollcue{display:flex;justify-content:flex-end;margin-top:clamp(40px,6vw,66px)}
+.scrollcue .in{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--faint);font-size:11px;letter-spacing:.4em}
+.scrollcue .bar{width:1px;height:70px;background:#C9C2AE}
+.photowrap{padding-left:clamp(0px,11vw,140px);margin-top:-24px;position:relative}
+.photo{height:clamp(280px,44vw,520px);background:var(--photo) repeating-linear-gradient(45deg,rgba(0,0,0,.05),rgba(0,0,0,.05) 8px,rgba(0,0,0,.02) 8px,rgba(0,0,0,.02) 16px);display:flex;align-items:center;justify-content:center;font:11px ui-monospace,Menlo,monospace;color:rgba(30,58,48,.45);text-align:center;padding:0 16px}
+.photocap{white-space:nowrap;position:absolute;left:clamp(24px,5vw,60px);bottom:56px;writing-mode:vertical-rl;font-family:var(--serif);font-size:clamp(17px,2vw,22px);letter-spacing:.4em;color:var(--ink);background:var(--bg);padding:26px 14px}
+.why{padding-top:clamp(70px,11vw,130px);padding-bottom:clamp(70px,11vw,130px);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.why .lead{font-family:var(--serif);font-size:15px;letter-spacing:.3em;color:var(--label);padding-top:10px;line-height:2}
+.why p{margin:0;font-size:clamp(16px,2vw,18px);line-height:2.4;color:var(--body-sub)}
+.why .why-close{margin-top:clamp(30px,4vw,44px);font-family:var(--serif);font-weight:600;font-size:clamp(19px,2.6vw,26px);line-height:2;color:var(--green)}
+.vision{background:var(--green);color:var(--green-ink);padding-top:clamp(90px,14vw,170px);padding-bottom:clamp(90px,14vw,170px);position:relative;overflow:hidden}
+.vision .ghost{position:absolute;right:-40px;bottom:-50px;font-family:var(--serif);font-size:clamp(160px,25vw,300px);line-height:1;color:rgba(243,241,232,.045)}
+.vision .lbl{font-size:12px;letter-spacing:.6em;color:var(--green-label);margin-bottom:clamp(32px,5vw,56px)}
+.vision h2{margin:0 0 clamp(26px,4vw,44px);font-family:var(--serif);font-weight:600;font-size:clamp(32px,7vw,82px);line-height:1.55}
+.vision p{margin:0;font-size:clamp(16px,2vw,18px);line-height:2.4;color:var(--green-sub);max-width:32em}
+.value{padding-top:clamp(80px,12vw,150px);padding-bottom:clamp(80px,12vw,150px);display:grid;grid-template-columns:1fr auto;gap:70px;align-items:center}
+.value h2{margin:0 0 clamp(24px,3vw,36px);font-family:var(--serif);font-weight:600;font-size:clamp(28px,5.4vw,62px);line-height:1.6;color:var(--green)}
+.value p{margin:0;font-size:clamp(16px,2vw,18px);line-height:2.3;color:var(--body-sub);max-width:30em}
+.value .vert{white-space:nowrap;writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.6vw,44px);letter-spacing:.28em;color:var(--green);border-left:1px solid #C9C2AE;padding-left:40px}
+.principles{margin:clamp(28px,4vw,40px) 0 0;padding:0;list-style:none;font-size:15.5px;line-height:2.15;color:var(--body-sub)}
+.principles li{padding-left:1.3em;text-indent:-1.3em}
+.principles li::before{content:"—";margin-right:.55em;color:var(--label)}
+.sec{padding-top:clamp(70px,10vw,120px);padding-bottom:clamp(70px,10vw,120px)}
+.sec .head{margin-bottom:clamp(36px,6vw,64px)}
+.sec h2.t{margin:18px 0 0;font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,44px);line-height:1.6;color:var(--green)}
+.svc-grid{border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr}
+.svc{padding:clamp(36px,5vw,60px) clamp(4px,3vw,48px);border-bottom:1px solid var(--line)}
+.svc:nth-child(odd){border-right:1px solid var(--line);padding-left:0}
+.svc .no{font-family:var(--serif);font-size:13px;letter-spacing:.4em;color:var(--faint)}
+.svc h3{margin:14px 0 6px;font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.6vw,26px);color:var(--green)}
+.svc .copy{font-family:var(--serif);font-size:15px;letter-spacing:.14em;color:var(--label);margin-bottom:16px}
+.svc p{margin:0;font-size:15px;line-height:2.1;color:#5C6659}
+.svc .price{margin-top:18px;font-size:14px;color:var(--sub)}
+.svc .price b{font-family:var(--serif);font-size:19px;color:var(--ink);font-weight:600}
+.rates{border-top:1px solid var(--line)}
+.rates .row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.rates .n{font-size:15.5px}
+.rates .n small{display:block;font-size:12.5px;color:var(--faint);margin-top:3px;letter-spacing:.04em}
+.rates .p{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--green);white-space:nowrap}
+.rates .p small{font-size:12px;color:var(--sub);font-family:var(--sans)}
+.note{font-size:13px;line-height:2;color:var(--sub);margin-top:22px}
+.band{background:var(--photo);padding-top:clamp(60px,8vw,90px);padding-bottom:clamp(60px,8vw,90px)}
+.band h2{margin:16px 0 20px;font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,38px);line-height:1.7;color:var(--green)}
+.band p{margin:0 0 26px;font-size:15.5px;line-height:2.2;color:var(--body-sub);max-width:38em}
+.promise{display:grid;grid-template-columns:auto 1fr;gap:70px;align-items:start}
+.promise .vert{white-space:nowrap;writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:clamp(22px,3vw,34px);letter-spacing:.3em;color:var(--green)}
+.promise ol{margin:0;padding:0;list-style:none;counter-reset:p}
+.promise ol li{counter-increment:p;display:grid;grid-template-columns:auto 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line);font-size:15.5px;line-height:2.05;color:var(--body-sub)}
+.promise ol li::before{content:counter(p,decimal-leading-zero);font-family:var(--serif);font-size:15px;color:var(--label);padding-top:3px}
+.access{display:flex;justify-content:space-between;align-items:center;gap:44px;padding-top:clamp(70px,10vw,110px);padding-bottom:clamp(70px,10vw,110px)}
+.access h2{margin:0 0 16px;font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;letter-spacing:.08em;color:var(--green)}
+.access p{margin:0;font-size:15.5px;line-height:2.1;color:var(--sub)}
+footer.site{padding-top:24px;padding-bottom:24px;border-top:1px solid var(--line);font-size:13px;color:var(--faint);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;letter-spacing:.1em}
+footer.site .fl{font-family:var(--serif);color:var(--ink)}
+@media (max-width:720px){
+  .m-hide{display:none !important}
+  header.site{flex-direction:column;align-items:flex-start;gap:12px}
+  header.site .logo{white-space:nowrap;font-size:21px}
+  header.site nav{gap:14px;font-size:13.5px;width:100%;justify-content:flex-start}
+  .hero{padding-top:44px}
+  .hero h1{font-size:clamp(22px,7.4vw,31px);line-height:1.7;letter-spacing:0}
+  .hero .date{position:static;writing-mode:horizontal-tb;margin-top:26px;letter-spacing:.3em}
+  .scrollcue{margin-top:26px}
+  .scrollcue .bar{height:44px}
+  .photowrap{padding-left:0;margin-top:0}
+  .photo{height:230px}
+  .photocap{position:static;writing-mode:horizontal-tb;display:block;margin:0;padding:16px 24px 0;letter-spacing:.2em}
+  .why{padding-top:36px;padding-bottom:56px;display:flex;flex-direction:column;gap:22px}
+  .why .why-close{margin-top:26px}
+  .vision{padding-top:70px;padding-bottom:70px}
+  .value{padding-top:52px;padding-bottom:52px;display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+  .value .vert{writing-mode:horizontal-tb;border-left:none;border-top:1px solid #C9C2AE;padding:24px 0 0;letter-spacing:.14em;font-size:21px;white-space:normal}
+  .sec{padding-top:52px;padding-bottom:52px}
+  .svc-grid{grid-template-columns:1fr}
+  .svc:nth-child(odd){border-right:none;padding-left:0}
+  .svc{padding-left:0;padding-right:0}
+  .svc .price{font-size:13px}
+  .svc .price b{font-size:17px}
+  .band{padding-top:48px;padding-bottom:48px}
+  .promise{display:flex;flex-direction:column;gap:22px}
+  .promise .vert{writing-mode:horizontal-tb;letter-spacing:.2em;font-size:20px}
+  .access{padding-top:52px;padding-bottom:52px;flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+
+<header class="site pad">
+  <div class="logo">ここスマ</div>
+  <nav>
+    <a href="index.html#service">できること</a>
+    <a href="index.html#manabi">学び</a>
+    <a href="omoi.html">想い</a>
+    <a href="index.html#access">店舗</a>
+    <a class="tel" href="tel:0720000000">072-000-0000</a>
+  </nav>
+</header>
+
+<!-- MISSION -->
+<div class="hero pad" data-reveal>
+  <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,5vw,52px);flex-wrap:wrap">
+    <span class="label">MISSION</span>
+    <span class="m-hide" style="width:64px;height:1px;background:#8C6A3F;align-self:center"></span>
+    <span class="label-sub">私たちの想い ― この店をつくる理由</span>
+  </div>
+  <h1>「家族に、友人に<br>お勧めできる」体験を、<br>当たり前にする。</h1>
+  <div class="date">二〇二六年十二月 大阪・羽曳野</div>
+  <div class="scrollcue"><div class="in"><span style="writing-mode:vertical-rl">SCROLL</span><span class="bar"></span></div></div>
+</div>
+
+<div class="photowrap" data-reveal>
+  <div class="photo">全幅写真:午前の店内。木の机とお茶、手元のスマホに光(実写に差し替え予定)</div>
+  <div class="photocap">売り場ではなく、居場所を。</div>
+</div>
+
+<!-- WHY -->
+<div class="why pad" data-reveal>
+  <div class="lead">この店が生まれる理由を、正直に。</div>
+  <div>
+    <p>携帯ショップを出るとき、ふと疑問が残ったことはありませんか。わからない言葉、断りづらい空気、使っていない大容量プラン。業界の内側で10年以上、その景色を見てきました。内側からは変えられない。だから外に、新しい選択肢をつくることにしました。</p>
+    <p class="why-close">あたたかい対面サポートを、適正価格で。<br>スマホとのつきあい方に、<span class="marker">もうひとつの選択肢</span>を。</p>
+  </div>
+</div>
+
+<!-- VISION -->
+<div class="vision pad" data-reveal>
+  <div class="ghost">楽</div>
+  <div style="position:relative">
+    <div class="lbl">VISION</div>
+    <h2>デジタルで、人生に<br>楽しみをもうひとつ。</h2>
+    <p>できることがひとつ増えると、行きたい場所がひとつ増える。私たちが売っているのは電話機ではなく、その「もうひとつ」です。スマホの次は、AIの時代。だからこの店は、キャリアショップでもネットでもない、地域のデジタルの相談窓口であり続けます。気軽に立ち寄れる、居場所のような店として。</p>
+  </div>
+</div>
+
+<!-- VALUE -->
+<div class="value pad" data-reveal>
+  <div>
+    <div class="label" style="margin-bottom:clamp(28px,4vw,48px)">VALUE</div>
+    <h2>とことん、<br><span class="marker">「あなたの最適」</span>だけを。</h2>
+    <p>むやみに高い機種も、いらない契約も、すすめません。あなたのプランをご一緒に見直して、「やめる」というご提案もします。ぴったりが見つかる方が、私たちはうれしい。</p>
+  </div>
+  <div class="vert">ちょうどいいを、ご一緒に。</div>
+</div>
+
+<!-- CLOSE -->
+<div class="access pad" style="border-top:1px solid var(--line)">
+  <div>
+    <h2>家族におすすめできる、スマホの相談窓口へ。</h2>
+    <p>サービスと料金は、トップページでご覧いただけます。</p>
+  </div>
+  <a class="btn" href="index.html">トップページへもどる</a>
+</div>
+
+<footer class="site pad">
+  <span class="fl">ここスマ</span>
+  <span>スマホの相談窓口 / © 2026 KOKOSMA, Habikino, Osaka</span>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var els=Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  els.forEach(function(el){el.style.opacity='0';el.style.transform='translateY(28px)';el.style.transition='opacity 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1)';el.style.willChange='opacity, transform';});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='none';io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(el){io.observe(el);});
+});
+</script>
+</body>
+</html>
+
