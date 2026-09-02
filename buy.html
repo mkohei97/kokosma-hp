@@ -1,0 +1,823 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>購入相談｜ネットの価格を、対面の安心で。｜ここスマ（大阪府羽曳野市）</title>
+<style>
+/* ==== tokens/fonts.css ==== */
+/* ここスマ｜書体
+   日本語は OS 標準の游ゴシック／ヒラギノ角ゴを第一候補にする。
+   webfont は読み込まない（シニア回線・印刷所入稿の双方で安定させるため）。
+   Noto Sans JP は Windows/Android で游ゴシックが無い場合のみ CDN で補う想定。 */
+/* 配布バイナリは持たず、OS にインストール済みの実体を local() で参照する。
+   未インストールの環境では下のフォールバックスタックがそのまま効く。 */
+@font-face { font-family: "Yu Gothic Medium"; src: local("Yu Gothic Medium"), local("YuGothic-Medium"), local("游ゴシック Medium"); font-weight: 400 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Yu Gothic"; src: local("Yu Gothic Bold"), local("YuGothic-Bold"), local("游ゴシック Bold"); font-weight: 600 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Yu Mincho"; src: local("Yu Mincho"), local("YuMincho-Regular"), local("游明朝"); font-weight: 400; font-style: normal; font-display: swap; }
+
+:root {
+  --font-jp-sans: "Yu Gothic Medium", "游ゴシック Medium", YuGothicM, "Yu Gothic", "游ゴシック体", YuGothic,
+    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
+  --font-jp-sans-bold: "Yu Gothic", "游ゴシック体", YuGothic, "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W6", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
+  --font-jp-mincho: "Yu Mincho", "游明朝体", YuMincho, "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W3", serif;
+  --font-num: "Helvetica Neue", Arial, "Yu Gothic Medium", sans-serif;
+
+  --font-body: var(--font-jp-sans);
+  --font-heading: var(--font-jp-sans-bold);
+  --font-tel: var(--font-num);
+}
+
+/* ==== tokens/colors.css ==== */
+:root {
+  /* --- ブランド：ディープティール（差し色。ベタ塗り面積は小さく） --- */
+  --teal-900: #0a4f4a;
+  --teal-800: #0c5f59;
+  --teal-700: #0f766e; /* ブランド基準色 */
+  --teal-600: #158a80;
+  --teal-300: #8fc7c1;
+  --teal-100: #d7ebe8;
+  --teal-50: #f1f8f7;
+
+  /* --- ニュートラル（サブ #555555 を基準にした階調） --- */
+  --gray-900: #232827;
+  --gray-800: #333a38;
+  --gray-700: #454b49;
+  --gray-600: #555555; /* サブ色 */
+  --gray-400: #8b918f;
+  --gray-300: #c6ccca;
+  --gray-200: #e4e8e6;
+  --gray-100: #f2f4f3;
+
+  /* --- ベース：白と生成り、明るい木目 --- */
+  --white: #ffffff;
+  --cream-50: #fdfbf7;
+  --cream-100: #f8f3ea;
+  --cream-200: #efe6d6;
+  --wood-200: #e7d5bd;
+  --wood-400: #c8a87e;
+  --wood-600: #a3805a;
+
+  /* --- セマンティック（やわらかい注意／正直に伝える） --- */
+  --amber-700: #96600a; /* 白背景で 5.6:1 */
+  --amber-100: #fbf1dd;
+  --amber-300: #e9c98a;
+  --info-700: var(--teal-700);
+  --info-100: var(--teal-100);
+
+  /* --- 役割トークン --- */
+  --text-heading: var(--gray-900);
+  --text-body: var(--gray-800);
+  --text-muted: var(--gray-600); /* これより薄いグレーを本文に使わない */
+  --text-on-teal: var(--white);
+  --text-link: var(--teal-800);
+  --text-link-hover: var(--teal-900);
+
+  --surface-page: var(--white);
+  --surface-alt: var(--cream-50);
+  --surface-card: var(--white);
+  --surface-tint: var(--teal-50);
+  --surface-wood: var(--wood-200);
+
+  --border-hairline: var(--gray-200);
+  --border-strong: var(--gray-300);
+  --border-brand: var(--teal-700);
+
+  --accent: var(--teal-700);
+  --accent-hover: var(--teal-800);
+  --accent-press: var(--teal-900);
+  --focus-ring: var(--teal-800);
+  --focus-ring-offset: var(--white);
+}
+
+/* ==== tokens/typography.css ==== */
+:root {
+  /* 本文 19px 以上・行間 1.8 以上を下限とする */
+  --fs-body-s: 19px;   /* 補足・キャプションの最小値（これ未満は使わない） */
+  --fs-body: 20px;
+  --fs-body-l: 22px;
+  --fs-lead: 24px;     /* リード文 */
+  --fs-h3: 26px;
+  --fs-h2: 34px;
+  --fs-h1: 44px;
+  --fs-display: 56px;  /* ヒーローの主見出し */
+  --fs-tel: 40px;      /* 電話番号の大きな表示 */
+  --fs-tel-lg: 56px;
+
+  --lh-tight: 1.4; /* @kind font */   /* 見出しのみ */
+  --lh-heading: 1.5; /* @kind font */
+  --lh-body: 1.8; /* @kind font */    /* 本文の下限 */
+  --lh-loose: 2; /* @kind font */     /* 長文・シニア向け読み物 */
+
+  --ls-tight: 0.01em;
+  --ls-body: 0.04em;  /* 和文は少しアキを取る */
+  --ls-wide: 0.12em;  /* ラベル・小見出し */
+
+  --fw-normal: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+}
+
+/* ==== tokens/spacing.css ==== */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --section-y: var(--space-9);      /* セクション上下の余白（PC） */
+  --section-y-sm: var(--space-8);   /* スマホ */
+  --container: 1080px;
+  --container-narrow: 760px;
+  --gutter: var(--space-5);
+
+  --tap-min: 48px;   /* タップ領域の最小 */
+  --tap-lg: 64px;    /* 電話 CTA */
+  --callbar-h: 76px; /* スマホ下部固定バーの高さ */
+}
+
+/* ==== tokens/radius.css ==== */
+:root {
+  /* 角丸はやや大きめ。ロゴのスマホ枠のRに合わせる */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;   /* カード標準 */
+  --radius-xl: 28px;   /* ヒーロー・大きな面 */
+  --radius-pill: 999px;
+}
+
+/* ==== tokens/shadows.css ==== */
+:root {
+  /* 影は薄く、ニュートラルではなく茶味を少し含ませる（生成りの紙の上で自然に見える） */
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px rgba(60, 48, 36, 0.06);
+  --shadow-card: 0 2px 6px rgba(60, 48, 36, 0.07);
+  --shadow-raised: 0 6px 18px rgba(60, 48, 36, 0.10);
+  --shadow-sticky: 0 -4px 16px rgba(60, 48, 36, 0.14); /* 下部固定バー用（上向き） */
+  --ring-focus: 0 0 0 3px var(--focus-ring-offset), 0 0 0 6px var(--focus-ring);
+}
+
+/* ==== tokens/motion.css ==== */
+:root {
+  /* 動きは最小限。フェードと色変化のみ。跳ねる動きは使わない */
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 180ms; /* @kind other */
+  --dur-slow: 280ms; /* @kind other */
+  --transition-ui: color var(--dur-base) var(--ease-standard),
+    background-color var(--dur-base) var(--ease-standard),
+    border-color var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard); /* @kind other */
+}
+
+/* ==== tokens/base.css ==== */
+/* ここスマ｜要素の既定値。クラス名を付けなくても読みやすいことを目標にする */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  color: var(--text-body);
+  background: var(--surface-page);
+  text-wrap: pretty;
+  font-feature-settings: "palt" 0; /* 和文は詰めすぎない */
+}
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--text-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-tight);
+  margin: 0 0 var(--space-4);
+}
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+p { margin: 0 0 var(--space-5); }
+p:last-child { margin-bottom: 0; }
+a { color: var(--text-link); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; transition: var(--transition-ui); }
+a:hover { color: var(--text-link-hover); text-decoration-thickness: 2px; }
+a:active { color: var(--accent-press); }
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { padding-left: 1.4em; margin: 0 0 var(--space-5); }
+li { margin-bottom: var(--space-2); }
+small { font-size: var(--fs-body-s); }
+strong { font-weight: var(--fw-bold); color: var(--text-heading); }
+hr { border: 0; border-top: 1px solid var(--border-hairline); margin: var(--space-7) 0; }
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; border-radius: var(--radius-xs); }
+::selection { background: var(--teal-100); }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ==== css/site.css ==== */
+/* =========================================================
+   ここスマ｜UI クラス層（素の HTML/CSS でそのまま使える）
+   すべての値は tokens/*.css の CSS 変数を参照する
+   ========================================================= */
+
+/* ---------- レイアウト ---------- */
+.ks-container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.ks-container--narrow { max-width: var(--container-narrow); }
+.ks-section { padding-block: var(--section-y); }
+.ks-section--tight { padding-block: var(--space-7); }
+.ks-section--alt { background: var(--surface-alt); }
+.ks-section--tint { background: var(--surface-tint); }
+.ks-stack > * + * { margin-top: var(--space-5); }
+.ks-grid { display: grid; gap: var(--space-5); }
+.ks-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ks-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ks-row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+
+/* ---------- 見出し ---------- */
+.ks-heading { margin: 0 0 var(--space-5); }
+.ks-heading__eyebrow { display: block; font-size: var(--fs-body-s); font-weight: var(--fw-bold); letter-spacing: var(--ls-wide); color: var(--teal-800); margin-bottom: var(--space-2); }
+.ks-heading__title { margin: 0; }
+.ks-heading__lead { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--text-body); margin: var(--space-4) 0 0; }
+/* 見出し罫：ティールは面ではなく線で効かせる */
+.ks-heading--ruled .ks-heading__title { padding-bottom: var(--space-3); border-bottom: 3px solid var(--teal-700); display: inline-block; }
+.ks-heading--barred .ks-heading__title { padding-left: var(--space-4); border-left: 6px solid var(--teal-700); }
+.ks-heading--center { text-align: center; }
+.ks-heading--center .ks-heading__title { display: inline-block; }
+
+/* ---------- ボタン ---------- */
+.ks-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3);
+  min-height: var(--tap-min); padding: var(--space-3) var(--space-6);
+  font-family: var(--font-heading); font-size: var(--fs-body-l); font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-body); line-height: 1.4; text-decoration: none; text-align: center;
+  border-radius: var(--radius-pill); border: 2px solid transparent; cursor: pointer;
+  transition: var(--transition-ui);
+}
+.ks-btn:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+.ks-btn--primary { background: var(--teal-700); color: var(--text-on-teal); box-shadow: var(--shadow-sm); }
+.ks-btn--primary:hover { background: var(--accent-hover); color: var(--white); text-decoration: none; }
+.ks-btn--primary:active { background: var(--accent-press); box-shadow: none; }
+.ks-btn--secondary { background: var(--white); color: var(--teal-800); border-color: var(--teal-700); }
+.ks-btn--secondary:hover { background: var(--teal-50); color: var(--teal-900); text-decoration: none; }
+.ks-btn--secondary:active { background: var(--teal-100); }
+.ks-btn--quiet { background: transparent; color: var(--gray-700); border-color: var(--border-strong); }
+.ks-btn--quiet:hover { background: var(--gray-100); color: var(--gray-900); text-decoration: none; }
+.ks-btn--lg { min-height: var(--tap-lg); font-size: var(--fs-h3); padding-inline: var(--space-7); }
+.ks-btn--block { display: flex; width: 100%; }
+.ks-btn[aria-disabled="true"], .ks-btn:disabled { opacity: 0.45; pointer-events: none; }
+
+/* ---------- アイコン（lucide-static を mask で currentColor 化） ---------- */
+.ks-icon { display: inline-block; width: 1.15em; height: 1.15em; flex: none; background: currentColor; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
+
+/* ---------- 電話番号の大きな表示 ---------- */
+.ks-tel { display: inline-flex; flex-direction: column; gap: var(--space-1); text-decoration: none; }
+.ks-tel__label { font-size: var(--fs-body-s); font-weight: var(--fw-bold); color: var(--gray-700); letter-spacing: var(--ls-wide); }
+.ks-tel__number { display: inline-flex; align-items: center; gap: var(--space-3); font-family: var(--font-tel); font-size: var(--fs-tel); font-weight: var(--fw-bold); line-height: 1.1; letter-spacing: 0.02em; color: var(--teal-800); text-decoration: none; }
+.ks-tel__number:hover { color: var(--teal-900); text-decoration: none; }
+.ks-tel--lg .ks-tel__number { font-size: var(--fs-tel-lg); }
+.ks-tel__hours { font-size: var(--fs-body-s); color: var(--text-muted); }
+.ks-tel-card { background: var(--white); border: 2px solid var(--teal-100); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-card); text-align: center; }
+.ks-tel-card .ks-tel { align-items: center; }
+
+/* ---------- ヘッダー（白地・ティールは差し色） ---------- */
+.ks-header { background: var(--white); border-bottom: 1px solid var(--border-hairline); }
+.ks-header__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); padding-block: var(--space-4); }
+.ks-header__brand { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; }
+.ks-header__logo { height: 52px; width: auto; }
+.ks-header__name { font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: var(--fs-h3); color: var(--gray-900); line-height: 1.2; }
+.ks-header__tagline { display: block; font-size: var(--fs-body-s); font-weight: var(--fw-normal); color: var(--text-muted); letter-spacing: var(--ls-body); }
+.ks-header__contact { display: flex; align-items: center; gap: var(--space-5); }
+/* ティール面バージョン（掲示物・LINE 用。web では原則使わない） */
+.ks-header--solid { background: var(--teal-700); border-bottom: 0; }
+.ks-header--solid .ks-header__name, .ks-header--solid .ks-header__tagline, .ks-header--solid .ks-tel__label, .ks-header--solid .ks-tel__number { color: var(--white); }
+.ks-header--solid .ks-btn--secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.7); }
+/* 上部の細いリボン（営業時間などの一言） */
+.ks-topbar { background: var(--cream-100); border-bottom: 1px solid var(--cream-200); font-size: var(--fs-body-s); color: var(--gray-700); }
+.ks-topbar__inner { display: flex; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-2); flex-wrap: wrap; }
+
+/* ---------- グローバルナビ ---------- */
+.ks-nav { background: var(--white); border-bottom: 1px solid var(--border-hairline); }
+.ks-nav__list { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+.ks-nav__item { margin: 0; }
+.ks-nav__link { display: flex; align-items: center; min-height: var(--tap-min); padding: 0 var(--space-5); font-size: var(--fs-body); font-weight: var(--fw-bold); color: var(--gray-800); text-decoration: none; border-bottom: 4px solid transparent; transition: var(--transition-ui); }
+.ks-nav__link:hover { color: var(--teal-800); background: var(--teal-50); text-decoration: none; }
+.ks-nav__link[aria-current="page"] { color: var(--teal-800); border-bottom-color: var(--teal-700); }
+
+/* ---------- ヒーロー ---------- */
+.ks-hero { background: var(--cream-50); border-bottom: 1px solid var(--cream-200); }
+.ks-hero__inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-8); align-items: center; padding-block: var(--space-9); }
+.ks-hero__title { font-size: var(--fs-display); line-height: var(--lh-tight); margin: 0 0 var(--space-5); }
+.ks-hero__title em { font-style: normal; color: var(--teal-800); }
+.ks-hero__lead { font-size: var(--fs-lead); line-height: var(--lh-loose); color: var(--text-body); margin: 0 0 var(--space-6); }
+.ks-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+.ks-hero__points { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; margin: var(--space-6) 0 0; padding: 0; }
+.ks-hero__points li { display: inline-flex; align-items: center; gap: var(--space-2); margin: 0; background: var(--white); border: 1px solid var(--teal-100); color: var(--teal-900); border-radius: var(--radius-pill); padding: var(--space-2) var(--space-4); font-size: var(--fs-body-s); font-weight: var(--fw-bold); }
+.ks-hero__media { border-radius: var(--radius-xl); overflow: hidden; }
+
+/* ---------- カード ---------- */
+.ks-card { background: var(--surface-card); border: 1px solid var(--border-hairline); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: var(--space-3); }
+.ks-card--flat { box-shadow: none; }
+.ks-card--tint { background: var(--surface-tint); border-color: var(--teal-100); box-shadow: none; }
+.ks-card--link { text-decoration: none; color: inherit; transition: var(--transition-ui); }
+.ks-card--link:hover { border-color: var(--teal-300); box-shadow: var(--shadow-raised); text-decoration: none; color: inherit; }
+.ks-card--link:active { box-shadow: var(--shadow-sm); }
+.ks-card__icon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--teal-50); color: var(--teal-700); font-size: 26px; }
+.ks-card__title { font-size: var(--fs-h3); margin: 0; }
+.ks-card__text { margin: 0; color: var(--text-body); }
+.ks-card__meta { margin-top: auto; padding-top: var(--space-3); font-size: var(--fs-body-s); color: var(--text-muted); }
+.ks-card__price { font-family: var(--font-tel); font-size: var(--fs-h2); font-weight: var(--fw-bold); color: var(--teal-800); letter-spacing: 0; }
+.ks-card__price span { font-family: var(--font-body); font-size: var(--fs-body-s); color: var(--text-muted); font-weight: var(--fw-normal); margin-left: var(--space-2); }
+.ks-card__num { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--teal-700); color: var(--white); font-family: var(--font-tel); font-weight: var(--fw-bold); font-size: 20px; }
+
+/* ---------- 料金テーブル ---------- */
+.ks-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border-hairline); background: var(--white); }
+.ks-table { width: 100%; border-collapse: collapse; font-size: var(--fs-body); }
+.ks-table caption { text-align: left; padding: var(--space-5) var(--space-5) 0; font-weight: var(--fw-bold); color: var(--text-heading); font-size: var(--fs-h3); }
+.ks-table th, .ks-table td { padding: var(--space-4) var(--space-5); text-align: left; border-bottom: 1px solid var(--border-hairline); line-height: var(--lh-heading); }
+.ks-table thead th { background: var(--teal-50); color: var(--teal-900); font-size: var(--fs-body-s); letter-spacing: var(--ls-wide); border-bottom: 2px solid var(--teal-300); white-space: nowrap; }
+.ks-table tbody tr:last-child th, .ks-table tbody tr:last-child td { border-bottom: 0; }
+.ks-table tbody tr:nth-child(even) { background: var(--cream-50); }
+.ks-table__price { font-family: var(--font-tel); font-weight: var(--fw-bold); font-size: var(--fs-body-l); color: var(--gray-900); white-space: nowrap; }
+.ks-table__note { font-size: var(--fs-body-s); color: var(--text-muted); }
+.ks-table-foot { padding: var(--space-4) var(--space-5); background: var(--cream-50); border-top: 1px solid var(--border-hairline); font-size: var(--fs-body-s); color: var(--gray-700); }
+
+/* ---------- 注意ボックス（2種） ---------- */
+.ks-notice { display: flex; gap: var(--space-4); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); border: 2px solid; }
+.ks-notice__icon { flex: none; width: 32px; height: 32px; font-size: 28px; line-height: 1; display: flex; align-items: center; justify-content: center; }
+.ks-notice__title { font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: var(--fs-body-l); margin: 0 0 var(--space-2); color: var(--text-heading); }
+.ks-notice__body { margin: 0; font-size: var(--fs-body); }
+/* やわらかい注意：おねがい・ご案内 */
+.ks-notice--soft { background: var(--amber-100); border-color: var(--amber-300); color: var(--gray-800); }
+.ks-notice--soft .ks-notice__icon { color: var(--amber-700); }
+/* 正直に伝える：できること・できないことの明示 */
+.ks-notice--honest { background: var(--teal-50); border-color: var(--teal-300); color: var(--gray-800); }
+.ks-notice--honest .ks-notice__icon { color: var(--teal-800); }
+
+/* ---------- 店舗情報（NAP）定義リスト ---------- */
+.ks-nap { margin: 0; display: grid; grid-template-columns: 9em 1fr; }
+.ks-nap dt { font-weight: var(--fw-bold); color: var(--teal-900); padding: var(--space-4) var(--space-4) var(--space-4) 0; border-top: 1px solid var(--border-hairline); }
+.ks-nap dd { margin: 0; padding: var(--space-4) 0; border-top: 1px solid var(--border-hairline); color: var(--text-body); }
+.ks-nap dt:first-of-type, .ks-nap dd:first-of-type { border-top: 0; }
+
+/* ---------- 写真プレースホルダー ---------- */
+.ks-photo { position: relative; display: flex; align-items: center; justify-content: center; text-align: center; background: repeating-linear-gradient(135deg, var(--cream-100) 0 14px, var(--cream-50) 14px 28px); border: 2px dashed var(--wood-400); border-radius: var(--radius-lg); color: var(--wood-600); font-size: var(--fs-body-s); font-weight: var(--fw-bold); padding: var(--space-5); min-height: 200px; }
+.ks-photo--wide { aspect-ratio: 16 / 9; }
+.ks-photo--square { aspect-ratio: 1 / 1; }
+.ks-photo--portrait { aspect-ratio: 3 / 4; }
+.ks-photo__label { display: block; }
+.ks-photo__hint { display: block; font-weight: var(--fw-normal); margin-top: var(--space-1); }
+
+/* ---------- バッジ ---------- */
+.ks-badge { display: inline-flex; align-items: center; gap: var(--space-2); border-radius: var(--radius-pill); padding: var(--space-1) var(--space-4); font-size: var(--fs-body-s); font-weight: var(--fw-bold); line-height: 1.6; }
+.ks-badge--teal { background: var(--teal-700); color: var(--white); }
+.ks-badge--outline { background: var(--white); color: var(--teal-800); border: 2px solid var(--teal-300); }
+.ks-badge--cream { background: var(--cream-100); color: var(--gray-700); }
+
+/* ---------- フッター ---------- */
+.ks-footer { background: var(--cream-50); border-top: 4px solid var(--teal-700); padding-block: var(--space-8) var(--space-6); color: var(--text-body); }
+.ks-footer__inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: var(--space-7); }
+.ks-footer__logo { height: 56px; width: auto; margin-bottom: var(--space-4); }
+.ks-footer__title { font-family: var(--font-heading); font-weight: var(--fw-bold); font-size: var(--fs-body-l); color: var(--teal-900); margin: 0 0 var(--space-3); }
+.ks-footer__list { list-style: none; margin: 0; padding: 0; }
+.ks-footer__list a { display: inline-flex; align-items: center; min-height: 40px; color: var(--gray-800); }
+.ks-footer__bottom { margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--border-hairline); font-size: var(--fs-body-s); color: var(--text-muted); display: flex; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+.ks-footer--solid { background: var(--teal-800); border-top: 0; color: var(--white); }
+.ks-footer--solid .ks-footer__title { color: var(--white); }
+.ks-footer--solid a, .ks-footer--solid .ks-footer__list a, .ks-footer--solid .ks-footer__bottom { color: rgba(255,255,255,0.92); }
+
+/* ---------- スマホ下部固定「電話する」バー ---------- */
+.ks-callbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: none; gap: var(--space-3); padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom)); background: var(--white); border-top: 1px solid var(--border-hairline); box-shadow: var(--shadow-sticky); }
+.ks-callbar .ks-btn { flex: 1; min-height: 56px; font-size: var(--fs-body-l); }
+.ks-callbar .ks-btn--primary { flex: 1.6; }
+.ks-has-callbar { padding-bottom: calc(var(--callbar-h) + var(--space-4)); }
+@media (max-width: 767px) { .ks-callbar { display: flex; } }
+
+/* ---------- スキップリンク ---------- */
+.ks-skip { position: absolute; left: -9999px; }
+.ks-skip:focus { left: var(--space-4); top: var(--space-4); z-index: 100; background: var(--white); padding: var(--space-3) var(--space-5); border-radius: var(--radius-sm); box-shadow: var(--shadow-raised); }
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width: 900px) {
+  .ks-hero__inner { grid-template-columns: 1fr; gap: var(--space-6); padding-block: var(--section-y-sm); }
+  .ks-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ks-footer__inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  :root { --fs-display: 34px; --fs-h1: 30px; --fs-h2: 26px; --fs-h3: 22px; --fs-tel: 32px; --fs-tel-lg: 40px; }
+  .ks-section { padding-block: var(--section-y-sm); }
+  .ks-grid--2, .ks-grid--3 { grid-template-columns: 1fr; }
+  .ks-footer__inner { grid-template-columns: 1fr; gap: var(--space-6); }
+  .ks-header__contact { display: none; }
+  .ks-nap { grid-template-columns: 1fr; }
+  .ks-nap dd { padding-top: 0; border-top: 0; }
+}
+
+/* ---------- 印刷（A4／A3 の掲示・チラシ） ---------- */
+@media print {
+  .ks-callbar, .ks-nav, .ks-skip { display: none !important; }
+  body { font-size: 12pt; line-height: 1.7; }
+  .ks-card, .ks-table-wrap, .ks-notice { box-shadow: none; }
+  a { text-decoration: none; color: var(--gray-900); }
+}
+
+
+/* --- アンカー着地位置の補正（sticky ヘッダーの高さ分だけ手前で止める） --- */
+:root{--stickH:211px}
+@media(max-width:960px){:root{--stickH:65px}}
+html{scroll-padding-top:calc(var(--stickH) + 16px)}
+
+/* --- 仮写真の流し込み（松田が後段で注入） --- */
+.hero__ph,.ease-ph{position:relative;overflow:hidden;border-radius:var(--r-lg)}
+.hero__ph>img,.ease-ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero__ph>span,.ease-ph>span{position:relative;z-index:1;background:rgba(255,255,255,.88);
+  padding:8px 16px;border-radius:var(--r-pill);border-bottom:2px dashed #d9a53b}
+</style>
+<style>
+*{box-sizing:border-box}
+:root{--ink:#1d2a28;--sub:#4f5c5a;--tint:#f4faf9;--deep:#0a3f3b;--r-lg:28px;--r-md:20px;--r-pill:999px;--shd:0 8px 24px rgba(10,63,59,.10);--shd-up:0 16px 36px rgba(10,63,59,.18);--w:1280px;--ease:cubic-bezier(.16,.72,.3,1)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font-body);font-size:19px;line-height:1.9;letter-spacing:.045em;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-heading);font-weight:700;color:var(--ink);margin:0;font-feature-settings:"palt" 1}
+p{margin:0}
+img,svg{display:block}
+a{color:var(--text-link);text-underline-offset:3px}
+a:hover{color:var(--text-link-hover)}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 40px}
+.lbl{display:inline-flex;align-items:center;gap:9px;font-size:19px;letter-spacing:.14em;color:var(--teal-900);background:var(--teal-100);border-radius:var(--r-pill);padding:8px 22px;font-weight:500}
+.lbl::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--teal-700);flex:none}
+.lbl--on{color:var(--deep);background:#a9dcd6}
+.h-xl{font-size:clamp(46px,5.2vw,80px);line-height:1.28;letter-spacing:-.012em}
+.h-l{font-size:clamp(34px,3.4vw,50px);line-height:1.38;letter-spacing:-.006em}
+.h-m{font-size:clamp(28px,2.4vw,36px);line-height:1.44;letter-spacing:0}
+.h-s{font-size:26px;line-height:1.5;letter-spacing:.01em}
+.lead{font-size:22px;line-height:1.95;color:var(--sub)}
+/* 未確定情報（電話・住所・営業時間など）：確定まで破線下線で明示。印刷でも残す */
+.ph{border-bottom:2px dashed #d9a53b}
+@media print{.ph{border-bottom:2px dashed #d9a53b}}
+/* ===== ボタン ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 32px;font-family:var(--font-heading);font-weight:700;font-size:20px;letter-spacing:.06em;text-decoration:none;border:2px solid var(--teal-700);border-radius:var(--r-pill);background:var(--teal-700);color:var(--white);transition:background .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+.btn:hover{background:var(--teal-800);border-color:var(--teal-800);color:var(--white);box-shadow:var(--shd-up);transform:translateY(-3px)}
+.btn:active{background:var(--teal-900);transform:translateY(0);box-shadow:none}
+.btn--white{background:var(--white);border-color:var(--white);color:var(--deep)}
+.btn--white:hover{background:var(--cream-100);border-color:var(--cream-100);color:var(--deep)}
+/* ===== 電話 ===== */
+.tel{display:inline-flex;flex-direction:column;gap:1px;text-decoration:none;min-height:56px;justify-content:center}
+.tel__l{font-size:19px;letter-spacing:.14em;color:var(--sub)}
+.tel__n{font-family:var(--font-num);font-weight:700;font-size:40px;line-height:1.15;letter-spacing:.005em;color:var(--teal-800);transition:color .2s var(--ease)}
+.tel:hover .tel__n{color:var(--teal-900)}
+.tel__h{font-size:16px;letter-spacing:.08em;color:var(--sub)}
+.tel--btn{background:var(--teal-700);border-radius:var(--r-pill);padding:14px 36px;min-height:80px;align-items:center;box-shadow:var(--shd);transition:background .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+.tel--btn .tel__l{color:#cfeae7}
+.tel--btn .tel__n{color:var(--white);font-size:44px}
+.tel--btn:hover{background:var(--teal-800);box-shadow:var(--shd-up);transform:translateY(-3px)}
+.tel--btn:hover .tel__n{color:var(--white)}
+.tel--btn:active{transform:translateY(0);box-shadow:var(--shd)}
+/* ===== ヘッダー＋ナビ（ひとかたまりで sticky） ===== */
+.stick{position:sticky;top:0;z-index:30}
+.hdr{background:rgba(255,255,255,.94);backdrop-filter:saturate(1.6) blur(10px)}
+.hdr__in{max-width:var(--w);margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:15px;text-decoration:none}
+.brand svg{width:52px;height:52px;flex:none}
+/* 暫定ワードマーク：本採用時は作字（アウトライン化した SVG）に差し替える。
+   それまでの識別処理として、字間 +0.08em・ウェイト 800・ナビ(20px)より大きい 34px で組む */
+.brand__nm{font-family:var(--font-jp-sans);font-weight:800;font-size:34px;letter-spacing:.08em;color:#1d2a28;line-height:1.1;white-space:nowrap}
+.brand__nm em{font-style:normal;color:#0F766E}
+.brand__tg{display:block;font-size:19px;font-weight:400;letter-spacing:.18em;color:var(--sub);margin-top:4px}
+.hdr__r{margin-left:auto;display:flex;align-items:center}
+.nav{background:var(--white);border-bottom:1px solid var(--gray-200)}
+.nav ul{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 56px),transparent)}
+.nav ul{max-width:var(--w);margin:0 auto;padding:0 40px;list-style:none;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav a{display:flex;align-items:center;min-height:56px;padding:0 20px;font-size:20px;font-weight:500;letter-spacing:.05em;color:var(--gray-800);text-decoration:none;white-space:nowrap;transition:color .2s var(--ease),box-shadow .2s var(--ease)}
+.nav a:hover{color:var(--teal-900);box-shadow:inset 0 -3px 0 var(--teal-100)}
+/* 現在地：下線3pxのみ。ナビ下の1px罫の上に重ねて描く */
+.nav a[aria-current]{color:var(--teal-900);box-shadow:inset 0 -3px 0 var(--teal-700)}
+/* ===== ヒーロー ===== */
+.hero{background:var(--tint);padding:96px 0 0;overflow:hidden}
+.hero__in{max-width:var(--w);margin:0 auto;padding:0 40px}
+.hero h1{margin:24px 0 0;max-width:15em}
+.hero h1 span{display:block}
+.hero h1 em{font-style:normal;color:var(--teal-700)}
+.hero__lead{margin-top:30px;max-width:30em}
+.hero__sub{font-size:19px;line-height:1.95;color:var(--sub);margin-top:18px;max-width:34em}
+.hero__ph{margin-top:64px;height:340px;background:var(--teal-100);display:flex;align-items:flex-end;justify-content:flex-end;padding:22px 40px}
+.hero__ph span{font-size:19px;letter-spacing:.08em;color:var(--teal-900)}
+/* ===== 料金のめやす ===== */
+.rates{padding:96px 0 0}
+.rates__hd{max-width:var(--w);margin:0 auto 34px;padding:0 40px;display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.rates__hd p{font-size:19px;letter-spacing:.1em;color:var(--sub);margin-left:auto}
+.rates__row{max-width:var(--w);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+/* 品目名は2行分を確保して価格の縦位置を揃える(【6】) */
+.rate__n{min-height:calc(19px * 1.9 * 2)}
+.rate{display:block;background:var(--white);border:2px solid var(--teal-100);border-radius:var(--r-md);padding:22px 20px 24px;text-decoration:none;color:inherit;transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+.rate:hover,.rate:focus-visible{border-color:var(--teal-700);box-shadow:var(--shd);transform:translateY(-4px);color:inherit}
+.rate__n{display:block;font-size:19px;letter-spacing:.09em;color:var(--sub);font-weight:500}
+.rate__v{display:block;margin-top:8px;font-family:var(--font-num);font-weight:700;font-size:38px;line-height:1.1;color:var(--teal-800);transition:transform .22s var(--ease);transform-origin:left bottom}
+.rate:hover .rate__v,.rate:focus-visible .rate__v{transform:scale(1.04)}
+.nw{white-space:nowrap}
+.rate__v small{font-size:19px;font-weight:500;letter-spacing:.05em;margin-left:2px;color:var(--ink)}
+.rate__d{display:block;margin-top:8px;font-size:19px;line-height:1.8;color:var(--sub)}
+.rates__foot{max-width:var(--w);margin:26px auto 0;padding:0 40px;font-size:19px;line-height:1.85;color:var(--sub)}
+/* ===== セクション ===== */
+.sec{padding:120px 0}
+.sec__hd{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:52px}
+.sec__hd h2{margin-top:18px}
+.rule{height:3px;background:var(--teal-700);border-radius:2px;width:100%;margin-bottom:34px;transform-origin:left center}
+/* ===== 4本柱 ===== */
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.pillar{display:grid;grid-template-rows:auto auto auto auto 1fr auto;row-gap:12px;background:var(--white);border:2px solid var(--gray-200);border-radius:var(--r-lg);padding:30px 28px 32px;text-decoration:none;color:inherit;transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+.pillar:hover,.pillar:focus-visible{border-color:var(--teal-700);box-shadow:var(--shd);transform:translateY(-4px);color:inherit}
+.pillar__i{width:52px;height:52px;border-radius:var(--r-pill);background:var(--teal-100);color:var(--teal-900);display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:21px;flex:none;transition:background .22s var(--ease),color .22s var(--ease)}
+.pillar:hover .pillar__i,.pillar:focus-visible .pillar__i{background:var(--teal-700);color:var(--white)}
+.pillar__k{font-size:19px;letter-spacing:.1em;color:var(--sub);font-weight:500}
+.pillar h3{font-size:24px;line-height:1.55;letter-spacing:.01em}
+.pillar__v{font-family:var(--font-num);font-weight:700;font-size:30px;line-height:1.1;color:var(--teal-800)}
+.pillar__v small{font-size:18px;font-weight:500;letter-spacing:.05em;margin-left:2px;color:var(--ink)}
+.pillar p{font-size:19px;line-height:1.85;color:var(--sub);align-self:start}
+.pillar__go{font-size:19px;letter-spacing:.07em;align-self:end;font-weight:500;min-height:48px;display:flex;align-items:center;color:var(--teal-800);transition:color .22s var(--ease)}
+.pillar:hover .pillar__go,.pillar:focus-visible .pillar__go{color:var(--teal-900)}
+/* ===== 出張スマホ教室（濃色面） ===== */
+.gov{padding:0 0 8px}
+.gov__in{max-width:var(--w);margin:0 auto;padding:0 40px}
+.gov__band{background:var(--teal-800);color:var(--white);border-radius:var(--r-lg);padding:68px 56px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.gov__band h2{color:var(--white);margin-top:16px}
+.gov__band p{font-size:20px;line-height:1.9;color:#cfeae7;margin-top:18px;max-width:44em}
+/* ===== 私たちの約束（人物写真を背景に） ===== */
+.vows{background:var(--white);padding:120px 0;position:relative;overflow:hidden}
+/* 背面の人物写真：差し替え前提のプレースホルダ。本文コントラストを落とさないよう
+   opacity 0.14＋生成り地へ溶けるマスク。写真未設定でもレイアウトは不変（絶対配置） */
+.vows__ph{position:absolute;z-index:0;pointer-events:none;opacity:.14;border-radius:var(--r-lg);overflow:hidden}
+.vows__ph--tr{top:-40px;right:-60px;width:520px;height:420px;-webkit-mask-image:linear-gradient(215deg,#000 30%,transparent 78%);mask-image:linear-gradient(215deg,#000 30%,transparent 78%)}
+.vows__ph img{width:100%;height:100%;object-fit:cover;display:block;background:var(--teal-100)}
+/* 左カラムの人物写真：通常フロー。キャプション・名前なし */
+.vows__photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-lg);background:var(--teal-100);margin-top:34px}
+.vows__in{max-width:var(--w);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:340px 1fr;gap:80px;align-items:start;position:relative;z-index:1}
+.vowlist{list-style:none;margin:0;padding:0;counter-reset:v;display:flex;flex-direction:column;gap:14px}
+.vowlist li{counter-increment:v;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:26px 32px;display:grid;grid-template-columns:52px 1fr;gap:0 22px;align-items:start;transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+.vowlist li:hover{border-color:var(--teal-700);box-shadow:var(--shd);transform:translateY(-3px)}
+.vowlist li::before{content:counter(v);font-family:var(--font-num);font-weight:700;font-size:20px;color:var(--teal-900);background:var(--teal-100);width:52px;height:52px;border-radius:var(--r-pill);display:flex;align-items:center;justify-content:center}
+.vowlist strong{grid-column:2;display:block;font-family:var(--font-heading);font-size:24px;line-height:1.6;font-weight:700}
+.vowlist span{grid-column:2;display:block;font-size:19px;line-height:1.85;color:var(--sub);margin-top:6px}
+/* ===== はじめてでも入りやすいように ===== */
+.ease-sec{padding:120px 0 0}
+.facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.facts li{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:20px 24px;font-size:20px;line-height:1.7}
+.facts li::before{content:"";width:10px;height:10px;border-radius:999px;background:var(--teal-700);flex:none}
+.ease-ph{margin-top:56px;height:380px;background:var(--teal-100);display:flex;align-items:flex-end;justify-content:flex-end;padding:22px 40px}
+.ease-ph span{font-size:19px;letter-spacing:.08em;color:var(--teal-900)}
+/* ===== 店舗情報 ===== */
+.shop{padding:120px 0}
+.shop__in{display:grid;grid-template-columns:1fr 460px;gap:72px;align-items:start}
+.nap{margin:0}
+.nap div{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--gray-200)}
+.nap div:first-child{border-top:1px solid var(--gray-200)}
+.nap dt{font-size:19px;letter-spacing:.11em;color:var(--sub);font-weight:500}
+.nap dd{margin:0;font-size:22px;line-height:1.7}
+.nap dd a{display:inline-flex;align-items:center;min-height:48px;font-family:var(--font-num);font-weight:700;letter-spacing:.005em;text-decoration:none;border-bottom:2px solid var(--teal-100);transition:color .2s var(--ease),border-color .2s var(--ease)}
+.nap dd a:hover{border-color:var(--teal-700)}
+.shop__cta{margin-top:36px}
+.mapbox{background:var(--teal-50);border-radius:var(--r-lg);aspect-ratio:1/1;display:flex;align-items:flex-end;padding:22px}
+/* ===== フッター ===== */
+.ft{background:var(--deep);color:#cfeae7;padding:80px 0 40px}
+.ft__in{max-width:var(--w);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:56px}
+.ft .brand__nm,.ft .brand__nm em{color:var(--white)}
+.ft .brand__tg{color:#bfdfdb}
+.ft .brand svg{color:var(--white)}
+.ft .tel__l{color:#bfdfdb}
+.ft .tel__n{color:var(--white)}
+.ft .tel:hover .tel__n{color:#a9dcd6}
+.ft h3{font-size:19px;letter-spacing:.15em;color:#bfdfdb;font-weight:500;margin-bottom:12px}
+.ft ul{list-style:none;margin:0;padding:0}
+.ft ul a{display:flex;align-items:center;min-height:48px;font-size:20px;text-decoration:none;color:var(--white);transition:color .2s var(--ease)}
+.ft ul a:hover{color:#a9dcd6;text-decoration:underline}
+.ft__bottom{max-width:var(--w);margin:48px auto 0;padding:24px 40px 0;border-top:1px solid rgba(255,255,255,.20);display:flex;justify-content:space-between;gap:24px;font-size:19px;color:#bfdfdb;flex-wrap:wrap}
+.callbar{display:none}
+
+/* =========================================================
+   動き：既定は「表示された状態」。@supports の中だけで動かす
+   ========================================================= */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes appear{from{opacity:0}to{opacity:1}}
+    @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @keyframes photo-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes stickshadow{from{box-shadow:0 1px 0 var(--gray-200)}to{box-shadow:0 4px 18px rgba(10,63,59,.12)}}
+    /* sticky ヘッダー：スクロール開始で薄い影（scroll() タイムライン） */
+    .stick{animation:stickshadow .3s var(--ease) both;animation-timeline:scroll();animation-range:0 120px}
+    .anim{animation:rise .62s var(--ease) both;animation-timeline:view();animation-range:entry 6% entry 44%}
+    .anim-fade{animation:appear .6s var(--ease) both;animation-timeline:view();animation-range:entry 6% entry 44%}
+    .rule{animation:grow .7s var(--ease) both;animation-timeline:view();animation-range:entry 4% entry 40%}
+    .hero__ph,.ease-ph{animation:photo-in .8s var(--ease) both;animation-timeline:view();animation-range:entry 0% entry 34%}
+    .stagger>*{animation:rise .58s var(--ease) both;animation-timeline:view();animation-range:entry 5% entry 42%}
+    .stagger>*:nth-child(2){animation-delay:.07s}
+    .stagger>*:nth-child(3){animation-delay:.14s}
+    .stagger>*:nth-child(4){animation-delay:.21s}
+    .stagger>*:nth-child(5){animation-delay:.28s}
+    .stagger>*:nth-child(6){animation-delay:.35s}
+    /* ヒーロー：1行目は即表示、2行目以降だけ遅らせる */
+    .hero h1 span+span{animation:rise .72s var(--ease) .1s both}
+    .hero__lead{animation:rise .72s var(--ease) .2s both}
+    .hero__sub{animation:rise .72s var(--ease) .3s both}
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .btn:hover,.rate:hover,.pillar:hover,.tel--btn:hover,.vowlist li:hover{transform:none}
+  .rate:hover .rate__v,.rate:focus-visible .rate__v{transform:none}
+}
+
+@media(max-width:1279px){
+  .rates__row{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:960px){
+  /* ロゴ行はスクロールで隠れてよい。ナビだけ sticky */
+  .stick{position:static}
+  .nav{position:sticky;top:0;z-index:30}
+}
+/* 834px で7項目が横スクロールなしで収まるように詰める（高さ56pxは維持） */
+@media(max-width:900px){
+  .nav ul{gap:0;padding-left:12px;padding-right:12px}
+  .nav a{padding:0 9px;font-size:16px;letter-spacing:.01em}
+}
+@media(max-width:880px){
+  .hero{padding:56px 0 0}
+  .sec__hd,.vows__in,.shop__in,.gov__band,.ft__in{grid-template-columns:1fr;gap:36px}
+  .sec,.vows,.shop{padding:68px 0}
+  .ease-sec{padding:68px 0 0}
+  .rates{padding-top:68px}
+  .hero__ph{height:220px;margin-top:44px;padding:18px 20px}
+  .ease-ph{height:240px;margin-top:40px;padding:18px 20px}
+  .wrap,.hero__in,.rates__hd,.rates__row,.rates__foot,.vows__in,.gov__in,.ft__in,.hdr__in,.nav ul,.ft__bottom{padding-left:20px;padding-right:20px}
+  .gov__band{padding:34px 24px}
+  .vowlist li{padding:22px 22px;grid-template-columns:44px 1fr;gap:0 16px}
+  .vowlist li::before{width:44px;height:44px}
+  .hdr__r .tel__n{font-size:30px}
+  .brand__nm{font-size:27px}
+  .brand svg{width:44px;height:44px}
+}
+/* 【4】下部固定バーは 699px 以下のみ（700px 以上はヘッダーに電話があるため） */
+@media(max-width:699px){
+  .rates__row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pillars{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--teal-700);box-shadow:0 -2px 14px rgba(0,0,0,.18)}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:76px;color:var(--white);font-family:var(--font-heading);font-weight:700;font-size:22px;text-decoration:none;letter-spacing:.06em}
+  .callbar a+a{flex:0 0 36%;background:var(--teal-800)}
+  body{padding-bottom:76px}
+}
+@media(max-width:430px){
+  .rate{padding:16px}
+  .rate__v{font-size:26px}
+  .rate__v small{font-size:15px}
+}
+/* ヘッダーの電話はモバイルでは下部固定バーと重複するため非表示 */
+@media(max-width:600px){
+  .hdr__r{display:none}
+}
+
+/* ===== 下層ページ ===== */
+.page-hero{background:var(--tint);padding:88px 0 76px}
+.page-hero h1{max-width:18em}
+.page-hero .lead{margin-top:28px;max-width:31em}
+.sub{padding:96px 0 0}
+.sub__hd{margin-bottom:32px}
+.price-card{background:var(--white);border:2px solid var(--teal-100);border-radius:var(--r-lg);padding:32px 36px;display:flex;flex-wrap:wrap;gap:10px 36px;align-items:baseline}
+.price-card__n{font-family:var(--font-heading);font-weight:700;font-size:26px}
+.price-card__v{font-family:var(--font-num);font-weight:700;font-size:44px;line-height:1.1;color:var(--teal-800)}
+.price-card__v small{font-size:20px;font-weight:500;color:var(--ink);margin-left:2px}
+.price-note{font-size:19px;letter-spacing:.1em;color:var(--sub);margin-left:auto}
+.incl{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.incl li{background:var(--teal-50);border-radius:var(--r-pill);padding:10px 22px;font-size:20px;line-height:1.8}
+.incl-note{margin-top:14px;font-size:19px;color:var(--sub)}
+.tbl{width:100%;border-collapse:collapse;table-layout:fixed}
+.tbl th,.tbl td{border-bottom:1px solid var(--gray-200);padding:18px 16px;text-align:left;font-size:19px;line-height:1.8;vertical-align:top;word-break:break-word;font-weight:400;color:var(--ink)}
+.tbl tbody th{font-weight:700;font-family:var(--font-heading)}
+.tbl tbody tr:first-child th,.tbl tbody tr:first-child td{border-top:2px solid var(--gray-200)}
+.tbl-after{margin-top:24px;font-family:var(--font-heading);font-weight:700;font-size:24px;line-height:1.7;color:var(--teal-900)}
+.tbl-under{margin-top:20px;font-size:19px;line-height:1.85;color:var(--sub)}
+.cmp thead th{font-size:19px;letter-spacing:.06em;color:var(--sub);font-weight:500;border-bottom:2px solid var(--gray-200)}
+.cmp .hl{background:var(--teal-800);color:var(--white)}
+.cmp td.hl,.cmp thead th.hl{border-bottom:1px solid rgba(255,255,255,.25)}
+.cmp thead th.hl{color:var(--white);border-radius:14px 14px 0 0;font-weight:700}
+.cmp tbody tr:last-child td.hl{border-radius:0 0 14px 14px;border-bottom:0}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.steps li{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:24px 26px;display:flex;align-items:center;gap:16px;font-size:20px;line-height:1.8}
+.steps__i{width:52px;height:52px;border-radius:var(--r-pill);background:var(--teal-100);color:var(--teal-900);display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:20px;flex:none}
+.note-box{border:2px solid var(--teal-700);border-radius:var(--r-md);padding:26px 30px;font-size:20px;line-height:1.95}
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cards3--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.facts.f2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cta{padding:120px 0}
+.cta__acts{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:36px}
+@media(max-width:1279px){
+  .cards3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:699px){
+  .page-hero{padding:56px 0 48px}
+  .sub{padding:64px 0 0}
+  .cta{padding:72px 0}
+  .cards3,.cards3--2,.facts.f2{grid-template-columns:minmax(0,1fr)}
+  .price-card{padding:24px}
+  .price-card__v{font-size:36px}
+  .tbl thead{display:none}
+  .tbl,.tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tbody tr{border:1px solid var(--gray-200);border-radius:var(--r-md);padding:16px 18px;margin-bottom:12px}
+  .tbl th,.tbl td{border:0;padding:4px 0}
+  .tbl tbody tr:first-child th,.tbl tbody tr:first-child td{border-top:0}
+  .cmp td::before{content:attr(data-c);display:block;font-size:16px;letter-spacing:.08em;color:var(--sub)}
+  .cmp td.hl{border-radius:12px;padding:10px 14px;margin-top:8px}
+  .cmp td.hl::before{color:#cfeae7}
+}
+
+/* 意味の切れ目で折り返す：一文ごとの塊。狭幅では文内で折れる（max-width:100%） */
+.nb{display:inline-block;max-width:100%}
+body{line-break:strict}
+</style></head><body>
+
+<div class="stick">
+<header class="hdr"><div class="hdr__in">
+  <a class="brand" href="index.html"><svg viewBox="0 0 100 100" role="img" aria-label="ここスマ" style="color:#0F766E"><mask id="m1"><rect width="100" height="100" fill="#fff"/><rect x="41" y="13" width="18" height="4.5" rx="2.25" fill="#000"/><path d="M45.177 69.856A16 16 0 1 1 45.177 43.644" fill="none" stroke="#000" stroke-width="10"/><circle cx="71.5" cy="63.25" r="10" fill="none" stroke="#000" stroke-width="9"/></mask><rect x="25" y="4" width="50" height="92" rx="13" fill="currentColor" mask="url(#m1)"/></svg>
+  <span class="brand__nm">ここ<em>スマ</em><span class="brand__tg">スマホの相談窓口</span></span></a>
+  <div class="hdr__r">
+    <a class="tel" href="tel:0720000000"><span class="tel__l">お電話でのご相談</span><span class="tel__n ph" data-placeholder="電話番号（未確定）">072-000-0000</span><span class="tel__h ph" data-placeholder="営業時間・定休日（未確定）">10:00〜18:00／水曜定休</span></a>
+  </div>
+</div></header>
+
+<nav class="nav" aria-label="メインメニュー"><ul>
+  <li><a href="index.html">ホーム</a></li>
+  <li><a href="plan.html">料金の見直し</a></li>
+  <li><a href="buy.html" aria-current="page">購入相談</a></li>
+  <li><a href="class.html">スマホ教室</a></li>
+  <li><a href="repair.html">故障修理</a></li>
+  <li><a href="gov.html">出張スマホ教室</a></li>
+  <li><a href="index.html#shop">店舗情報</a></li>
+</ul></nav>
+</div>
+
+<section class="page-hero"><div class="wrap">
+  <h1 class="h-l">ネットの価格を、対面の安心で。</h1>
+  <p class="lead"><span class="nb">ケータイショップだと、高い。</span><span class="nb">ネットだと、</span><span class="nb">自分でできるか不安。</span><span class="nb">ここスマは、</span><span class="nb">対面サポートを適正価格で。</span><span class="nb">スマホの買い方の「第3の選択肢」です。</span></p>
+</div></section>
+
+<section class="sub"><div class="wrap">
+  <table class="tbl cmp"><thead><tr><th></th><th scope="col">ケータイショップ</th><th scope="col">ネットで自分で</th><th scope="col" class="hl">ここスマ</th></tr></thead><tbody>
+    <tr><th scope="row">サポート</th><td data-c="ケータイショップ">その場で全部やってくれる</td><td data-c="ネットで自分で">なし（全部自分で）</td><td data-c="ここスマ" class="hl">隣で一緒に。操作はあなた自身で。</td></tr>
+    <tr><th scope="row">費用</th><td data-c="ケータイショップ">端末代のほかに諸費用がかかります</td><td data-c="ネットで自分で">手数料0円</td><td data-c="ここスマ" class="hl">サポート料19,800円だけ</td></tr>
+    <tr><th scope="row">安心</th><td data-c="ケータイショップ">○</td><td data-c="ネットで自分で">△</td><td data-c="ここスマ" class="hl">○＋あなた専用カルテに記録が残る</td></tr>
+  </tbody></table>
+  <p class="tbl-under">全部やってもらえる安心に相応の費用を感じる方は、それも正解です。</p>
+</div></section>
+
+<section class="sub"><div class="wrap">
+  <div class="price-card anim"><span class="price-card__n">ネット購入まるごとサポート</span><span class="price-card__v"><span class="nw">19,800<small>円</small></span></span><span class="price-note">税込／2026年8月現在</span></div>
+  <ul class="incl stagger">
+    <li>①機種選び・買い方相談</li>
+    <li>②ネット購入の伴走</li>
+    <li>③開通・データ移行・アプリ設定</li>
+  </ul>
+  <p class="incl-note">単品：① 7,000円／② 4,000円／③ 12,000円（すべて税込。セットなら3,200円おトク）</p>
+  <p class="incl-note">買う先は、AppleやGoogleなどのメーカー公式ストアが基本。<br>「どこで買うか」から、一緒に見直します。</p>
+</div></section>
+
+<section class="sub"><div class="wrap">
+  <div class="note-box anim"><span class="nb">代行ではありません。</span><span class="nb">購入の主体はご本人です。</span><span class="nb">アカウント作成・</span><span class="nb">本人確認書類のアップロード・</span><span class="nb">支払い方法の登録は、</span><span class="nb">すべてご本人が操作します。</span><span class="nb">私たちは隣で画面を指さしてお教えします。</span></div>
+</div></section>
+
+<section class="sub"><div class="wrap">
+  <h2 class="h-m sub__hd anim">中古という選択肢</h2>
+  <div class="cards3 cards3--2 stagger">
+    <div class="rate"><span class="rate__n">見やすいスマホ導入パック</span><span class="rate__v"><span class="nw">6,000〜10,000<small>円</small></span></span><span class="rate__d">中古端末＋初期設定＋レクチャー30分＋保証90日</span></div>
+    <div class="rate"><span class="rate__n">iPhone中古（12／13／14）</span><span class="rate__v"><span class="nw">8,000〜15,000<small>円</small></span></span></div>
+  </div>
+  <ul class="facts f2 stagger" style="margin-top:16px">
+    <li>バッテリー最大容量85％以上を基準にしています。</li>
+    <li>保証は90日。</li>
+    <li>赤ロム保証を明示します。</li>
+    <li>OSサポートの残り期間を必ずお伝えします。</li>
+  </ul>
+  <p style="margin-top:26px;font-size:20px;line-height:1.9">使わなくなった端末は、店頭で買い取ります（本人確認書類が必要です）。</p>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <h2 class="h-l anim">まずは、お気軽にお立ち寄りください。</h2>
+  <div class="cta__acts"><a class="tel tel--btn" href="tel:0720000000"><span class="tel__l">お電話でのご相談</span><span class="tel__n ph" data-placeholder="電話番号（未確定）">072-000-0000</span></a><a class="btn" href="index.html#shop">店舗情報を見る</a></div>
+</div></section>
+
+<footer class="ft"><div class="ft__in">
+  <div>
+    <a class="brand" href="index.html" style="margin-bottom:20px"><svg viewBox="0 0 100 100" role="img" aria-label="ここスマ"><mask id="m2"><rect width="100" height="100" fill="#fff"/><rect x="41" y="13" width="18" height="4.5" rx="2.25" fill="#000"/><path d="M45.177 69.856A16 16 0 1 1 45.177 43.644" fill="none" stroke="#000" stroke-width="10"/><circle cx="71.5" cy="63.25" r="10" fill="none" stroke="#000" stroke-width="9"/></mask><rect x="25" y="4" width="50" height="92" rx="13" fill="currentColor" mask="url(#m2)"/></svg><span class="brand__nm">ここ<em>スマ</em><span class="brand__tg">スマホの相談窓口</span></span></a>
+    <p style="font-size:19px;line-height:1.9;color:#bfdfdb"><span class="ph" data-placeholder="住所（番地未確定）">大阪府羽曳野市西浦 0-0-0</span><br><span class="ph" data-placeholder="営業時間・定休日（未確定）">10:00〜18:00／水曜定休</span></p>
+    <a class="tel" href="tel:0720000000" style="margin-top:16px"><span class="tel__l">お電話でのご相談</span><span class="tel__n ph" data-placeholder="電話番号（未確定）">072-000-0000</span></a>
+  </div>
+  <div><h3>メニュー</h3><ul><li><a href="plan.html">料金の見直し</a></li><li><a href="buy.html">購入相談</a></li><li><a href="class.html">スマホ教室・個別相談</a></li><li><a href="repair.html">故障修理</a></li><li><a href="gov.html">出張スマホ教室</a></li></ul></div>
+  <div><h3>お店のこと</h3><ul><li><a href="index.html#shop">アクセス・営業時間</a></li><li><a href="index.html#vows">私たちの約束</a></li><li><a href="index.html#rates">料金のめやす</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ul></div>
+</div>
+<div class="ft__bottom"><span>© 2026 ここスマ</span><span>iPhone修理・スマホ修理（故障修理）／スマホの相談窓口／大阪府羽曳野市</span></div></footer>
+
+<div class="callbar"><a href="tel:0720000000">電話する</a><a href="index.html#shop">地図</a></div>
+</body></html>
