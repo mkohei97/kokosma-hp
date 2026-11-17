@@ -157,9 +157,9 @@ p.telno{font-size:clamp(28px,3vw,36px)!important;font-weight:900!important;lette
 .nt .ni{display:block;aspect-ratio:3/2;overflow:hidden;background:var(--gray)}
 .nt .ni img{width:100%;height:100%;object-fit:cover;display:block}
 .nt .nx{display:flex;flex-direction:column;gap:8px;padding:16px 18px 20px}
-.nm{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--sub);margin:0}
-.nm time{font-family:var(--en);font-weight:600;letter-spacing:.04em}
-.nc{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--navy);padding:3px 10px;border-radius:999px;letter-spacing:.04em}
+.nt .nm,.nart .nm{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--sub);margin:0}
+.nt .nm time,.nart .nm time{font-family:var(--en);font-weight:600;letter-spacing:.04em}
+.nt .nc,.nart .nc,.nstrip .nc{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--navy);padding:3px 10px;border-radius:999px;letter-spacing:.04em}
 .nt .nn{font-weight:700;font-size:17px;line-height:1.6}
 .newsband{padding-top:72px;padding-bottom:72px}
 .nart .tx{max-width:820px!important;margin:0 auto}
@@ -202,3 +202,13 @@ p.telno{font-size:clamp(28px,3vw,36px)!important;font-weight:900!important;lette
 @media (min-width:1181px){.gnav a:not(.cta),.gnav a[href]:not(.cta){width:auto!important;padding:8px 13px}.gnav a .ja,.gnav a .en{white-space:nowrap}}
 @media (min-width:1181px) and (max-width:1380px){.gnav a:not(.cta),.gnav a[href]:not(.cta){padding:8px 9px}.gnav a .ja{font-size:13.5px}.gnav a .en{font-size:9.5px;letter-spacing:.1em}}
 @media (min-width:1181px){.gnav a:not(.cta),.gnav a[href]:not(.cta){min-width:76px}}
+/* 11/18 文字を一回り大きく（松田さん「他のページが小さく感じる」）＝地の文だけを上げる。見出し・札・図の中の小さな文字は変えない（崩れ防止） */
+@media (max-width:1099px){
+ main:not(.lpmain) p:not([class]),.nbody li,.info dd,.faq summary,.faq details p{font-size:17px}
+ .gt .gq{font-size:14.5px}
+ .lpmain.wide2 [style*="font-size: 15px"]{font-size:16.5px!important}
+ .lpmain.wide2 [style*="font-size: 14px"]{font-size:15px!important}
+}
+@media (min-width:1100px){
+ main:not(.lpmain) p:not([class]),.nbody li,.info dd,.faq details p{font-size:19px}
+}
