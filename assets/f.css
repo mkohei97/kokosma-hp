@@ -146,3 +146,6 @@
 @media (max-width:760px){.btn.line{font-size:16px;padding:0 20px}}
 /* 11/14 トップの見出しはスマホだけ4行・パソコンは2行 */
 @media (min-width:1100px){.mvtx br.sp{display:none}}
+/* 11/17 店の電話番号 */
+.telno{margin-top:8px;font-size:clamp(26px,3vw,34px);font-weight:900;letter-spacing:.04em}.telno a{color:var(--navy);text-decoration:none}
+p.telno{font-size:clamp(28px,3vw,36px)!important;font-weight:900!important;letter-spacing:.04em;line-height:1.4!important}p.telno a{color:var(--navy)!important;text-decoration:none!important}
