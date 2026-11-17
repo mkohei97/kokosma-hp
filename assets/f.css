@@ -212,3 +212,7 @@ p.telno{font-size:clamp(28px,3vw,36px)!important;font-weight:900!important;lette
 @media (min-width:1100px){
  main:not(.lpmain) p:not([class]),.nbody li,.info dd,.faq details p{font-size:19px}
 }
+/* 11/18 トップの定型句を強調（松田さん） */
+.gside .tx p.anyt{margin-top:14px;font-size:18px;font-weight:800;line-height:1.8;color:var(--navy)}
+.gside .tx p.anyt span{background:linear-gradient(transparent 60%,#FFEDA6 60%)}
+@media (min-width:1100px){.gside .tx p.anyt{font-size:20px}}
