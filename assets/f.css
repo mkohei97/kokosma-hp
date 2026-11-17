@@ -149,3 +149,56 @@
 /* 11/17 店の電話番号 */
 .telno{margin-top:8px;font-size:clamp(26px,3vw,34px);font-weight:900;letter-spacing:.04em}.telno a{color:var(--navy);text-decoration:none}
 p.telno{font-size:clamp(28px,3vw,36px)!important;font-weight:900!important;letter-spacing:.04em;line-height:1.4!important}p.telno a{color:var(--navy)!important;text-decoration:none!important}
+/* 取り組み・お知らせ（build_news.py・2026-11-17） */
+.ntiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:28px}
+.sec.solo .tx .ntiles,.newsband .tx{max-width:none}
+.nt{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:box-shadow .2s,transform .2s}
+.nt:hover{box-shadow:0 10px 24px rgba(28,0,60,.10);transform:translateY(-2px)}
+.nt .ni{display:block;aspect-ratio:3/2;overflow:hidden;background:var(--gray)}
+.nt .ni img{width:100%;height:100%;object-fit:cover;display:block}
+.nt .nx{display:flex;flex-direction:column;gap:8px;padding:16px 18px 20px}
+.nm{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--sub);margin:0}
+.nm time{font-family:var(--en);font-weight:600;letter-spacing:.04em}
+.nc{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--navy);padding:3px 10px;border-radius:999px;letter-spacing:.04em}
+.nt .nn{font-weight:700;font-size:17px;line-height:1.6}
+.newsband{padding-top:72px;padding-bottom:72px}
+.nart .tx{max-width:820px!important;margin:0 auto}
+.nart .nt1{font-size:clamp(24px,3vw,34px);line-height:1.5;margin:14px 0 26px}
+.nfig{margin:26px 0}
+.nfig img{width:100%;height:auto;display:block}
+.nfig figcaption{font-size:14px;color:var(--sub);margin-top:8px}
+.nfig.cover{margin-top:0}
+.nbody p{font-size:17px;line-height:2;margin:0 0 1.2em}
+.nbody .nh{font-size:clamp(20px,2.2vw,24px);margin:2em 0 .8em;padding-left:14px;border-left:4px solid var(--em)}
+.nbody ul{margin:0 0 1.4em;padding-left:1.3em;font-size:17px;line-height:1.9}
+.npn{display:flex;justify-content:space-between;gap:16px;margin-top:48px;padding-top:22px;border-top:1px solid var(--line);font-size:15px}
+.npn a{color:var(--navy);text-decoration:none;max-width:48%}
+.npn a:hover{text-decoration:underline}
+.npn .n{text-align:right}
+.nback{text-align:center}
+@media (max-width:900px){.ntiles{grid-template-columns:1fr;gap:14px}
+.nt{flex-direction:row}.nt .ni{width:38%;flex-shrink:0;aspect-ratio:4/3}.nt .nx{padding:12px 14px;gap:6px}.nt .nn{font-size:15px}
+.newsband{padding-top:52px;padding-bottom:52px}.nbody p,.nbody ul{font-size:16px}}
+.ncrumb{padding-top:110px}
+.nart{padding-top:36px!important}
+.nart .nbody h2.nh{font-size:clamp(20px,2.2vw,24px)!important;line-height:1.5;letter-spacing:.02em;margin:2em 0 .8em}
+@media (max-width:900px){.ncrumb{padding-top:84px}}
+.nlist{padding-top:40px!important}.nlist .ntiles{margin-top:0}
+/* 最初の画面のすぐ下の、最新1件の細い帯（11/17） */
+.nstrip{border-bottom:1px solid var(--line);background:#fff}
+.nstrip .in{display:flex;align-items:center;gap:16px;min-height:56px;padding-top:10px;padding-bottom:10px}
+.nstrip .nsl{font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.16em;color:var(--sub);flex-shrink:0}
+.nstrip .nsa{display:flex;align-items:center;gap:12px;min-width:0;flex:1;text-decoration:none;color:var(--ink)}
+.nstrip .nsa time{font-family:var(--en);font-weight:600;font-size:14px;color:var(--sub);flex-shrink:0}
+.nstrip .nst{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nstrip .nsa:hover .nst{text-decoration:underline}
+.nstrip .nsall{flex-shrink:0;font-size:14px;color:var(--navy);text-decoration:none}
+.nstrip .nsall span{margin-left:4px}
+@media (max-width:760px){.nstrip .in{flex-wrap:wrap;gap:6px 10px;padding-top:12px;padding-bottom:12px}.nstrip .nsl{display:none}
+ .nstrip .nsa{flex-wrap:wrap;gap:4px 10px}.nstrip .nst{white-space:normal;flex-basis:100%;font-size:15px;line-height:1.6}.nstrip .nsall{display:none}}
+/* メニュー10個（NEWSを足した）：パソコンでは1マスを少し詰める */
+@media (min-width:1181px){.gnav a:not(.cta){width:88px}.gnav a[href="ai.html"]{width:112px}.gnav a[href="consult.html"]{width:100px}}
+/* 11/17 メニューの見直し＝マスの幅を固定せず、文字の長さに合わせる（窮屈なマスをなくす）。狭いパソコンでは文字を一段小さく */
+@media (min-width:1181px){.gnav a:not(.cta),.gnav a[href]:not(.cta){width:auto!important;padding:8px 13px}.gnav a .ja,.gnav a .en{white-space:nowrap}}
+@media (min-width:1181px) and (max-width:1380px){.gnav a:not(.cta),.gnav a[href]:not(.cta){padding:8px 9px}.gnav a .ja{font-size:13.5px}.gnav a .en{font-size:9.5px;letter-spacing:.1em}}
+@media (min-width:1181px){.gnav a:not(.cta),.gnav a[href]:not(.cta){min-width:76px}}
