@@ -216,3 +216,30 @@ p.telno{font-size:clamp(28px,3vw,36px)!important;font-weight:900!important;lette
 .gside .tx p.anyt{margin-top:14px;font-size:18px;font-weight:800;line-height:1.8;color:var(--navy)}
 .gside .tx p.anyt span{background:linear-gradient(transparent 60%,#FFEDA6 60%)}
 @media (min-width:1100px){.gside .tx p.anyt{font-size:20px}}
+.nt .nx{min-width:0}.nt .nn{overflow-wrap:anywhere}.ntiles{min-width:0}.ntiles>.nt{min-width:0}
+.nc{white-space:nowrap}
+/* 11/18 お知らせのデザインを整える（松田さん「おすすめで」） */
+.nart .nen{font-family:var(--en);font-weight:600;font-size:13px;letter-spacing:.18em;color:var(--sub);margin:0 0 12px}
+.nart .nbody h2.nh{border-left:0!important;padding-left:0!important;color:var(--navy);font-weight:800;padding-bottom:10px!important;border-bottom:1px solid var(--line);margin:2.4em 0 1em!important}
+.nart .nbody h2.nh:first-child{margin-top:.6em!important}
+.nfacts{display:grid;grid-template-columns:max-content 1fr;margin:0 0 1.6em;border-top:1px solid var(--line);font-size:16px;line-height:1.8}
+.nfacts dt,.nfacts dd{margin:0;padding:12px 0;border-bottom:1px solid var(--line)}
+.nfacts dt{font-weight:800;color:var(--navy);padding-right:24px;white-space:nowrap}
+.ngal{display:grid;gap:22px;margin:1.6em 0}
+.ngal .nfig{margin:0}
+.nfig figcaption{font-size:16px!important;color:var(--ink)!important;margin-top:10px!important;line-height:1.7}
+.ncta{background:var(--gray);border-radius:12px;padding:24px 24px 26px;margin:1.2em 0 0}
+.ncta p{margin:0 0 .4em}
+.ncta .nctab{margin:16px 0 0}
+.ncta .nctab .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:16px;text-decoration:none}
+.npn a{display:flex;flex-direction:column;gap:4px;font-size:16px!important;font-weight:700;line-height:1.6}
+.npn small{font-size:13px;font-weight:600;color:var(--sub)}
+.npn .n{align-items:flex-end}
+.nc.nc-r{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy)}
+.nt .nn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media (min-width:900px){.ngal.n2{grid-template-columns:1fr 1fr}.ngal.n2 .nfig:nth-child(odd):last-child{grid-column:1/-1}}
+@media (max-width:899px){.nfacts{font-size:16px}.nfacts dt{padding-right:16px}.ncta{padding:20px 18px 22px}.ncta .nctab .btn{width:100%}}
+.npn a{max-width:none!important;flex:1}.npn span:empty{display:none}
+.phero.pplain{height:auto;background:var(--gray);color:var(--navy);border-bottom:1px solid var(--line)}.phero.pplain::after{display:none}.phero.pplain .in{height:auto;padding-top:44px;padding-bottom:36px}.phero.pplain .en{color:var(--sub)}.phero.pplain h1{font-size:clamp(28px,3.4vw,40px);margin-top:8px}.phero.pplain p{opacity:1;color:var(--ink)}@media (max-width:899px){.phero.pplain .in{padding-top:28px;padding-bottom:24px}}
+.gt .ga{font-size:0!important}.gt .ga::before{content:"";display:block;width:8px;height:8px;border-top:2.5px solid #fff;border-right:2.5px solid #fff;transform:translateX(-1.5px) rotate(45deg)}
+.gt .ga::before{position:absolute;left:50%;top:50%;margin:0;transform:translate(-68%,-50%) rotate(45deg)}
